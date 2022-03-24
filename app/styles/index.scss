@@ -1,1 +1,15 @@
 @import '~bootstrap/scss/bootstrap';
+
+input {
+    display:block;
+    margin: 5px;
+}
+h3 {
+    margin: 30px;
+}
+#auth-display {
+    margin:10px;
+}
+#sign-display {
+    margin:10px;
+}
