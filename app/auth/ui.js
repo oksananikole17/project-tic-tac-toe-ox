@@ -25,9 +25,21 @@ const onSignInFailure = function () {
   $('#sign-display').html('<p>Fail</p>')
 }
 
+const onChangePasswordSuccess = function () {
+  $('#sign-display').html('<p>Password Changed Successfully!</p>')
+
+  $('form').trigger('reset')
+}
+
+const onChangePasswordFailure = function () {
+  $('#sign-display').html('<p>Fail</p>')
+}
+
 export default {
   onSignUpFailure,
   onSignUpSuccess,
   onSignInSuccess,
-  onSignInFailure
+  onSignInFailure,
+  onChangePasswordFailure,
+  onChangePasswordSuccess
 }
