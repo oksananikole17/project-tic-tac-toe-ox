@@ -13,12 +13,14 @@ const onSignUpFailure = function () {
 }
 
 const onSignInSuccess = function (response) {
-  $('#sign-display').html('<p>Signed In!</p>')
+  $('#lets-play').html('Lets Play')
 
   $('form').trigger('reset')
 
   console.log(response)
   store.user = response.user
+
+  return true
 }
 
 const onSignInFailure = function () {

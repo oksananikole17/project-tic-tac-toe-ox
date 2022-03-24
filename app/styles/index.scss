@@ -1,4 +1,11 @@
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+$font-family:'Playfair Display', serif;
+$body-bg-color: grey;
+$box-bg-color: lightgrey;
+$box-border-color: white;
+$alt-bg-color: cyan;
 
 input {
     display:block;
@@ -28,10 +35,13 @@ h2{
     text-align:center;
     margin:40px;
 }
-.container {
-    align-content: center;
-}
-.col-md-4 {
-    border:black ;
-    border-width: 10px;
+.box {
+  align-items: center;
+  background-color: $box-bg-color;
+  border: 1px solid $box-border-color;
+  color: $box-border-color;
+  display: flex;
+  font-family: $font-family;
+  height: 80px;
+  justify-content: center;
 }
