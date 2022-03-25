@@ -20,8 +20,24 @@ const onCreateGame = function (event) {
   // api call
   gameApi
     .createGame()
-    .then(() => gameUi.onCreateGameSuccess())
+    .then((response) => gameUi.onCreateGameSuccess(response))
 }
+
+const onUpdateGame = function (event) {
+  event.preventDefault()
+  console.log('did it work')
+
+  const box = event.target
+  console.log(box)
+  const data = $(event.target).data('cell-index')
+  console.log(data)
+
+  gameApi
+    .updateGame(data)
+    .then(() => gameUi.onUpdateGameSuccess())
+}
+
 module.exports = {
-  onCreateGame
+  onCreateGame,
+  onUpdateGame
 }

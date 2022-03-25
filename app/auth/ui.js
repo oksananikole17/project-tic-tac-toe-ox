@@ -25,6 +25,8 @@ const onSignInSuccess = function (response) {
 
 const onSignInFailure = function () {
   $('#sign-display').html('<p>Fail</p>')
+
+  $('form').trigger('reset')
 }
 
 const onChangePasswordSuccess = function () {

@@ -11,7 +11,17 @@ const createGame = function () {
     }
   })
 }
-
+const updateGame = function (data) {
+  return $.ajax({
+    method: 'PATCH',
+    url: 'https://tic-tac-toe-api-development.herokuapp.com/games/ + store.game.id',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data
+  })
+}
 module.exports = {
-  createGame
+  createGame,
+  updateGame
 }

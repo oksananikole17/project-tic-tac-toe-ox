@@ -37,11 +37,16 @@ h2{
 }
 .box {
   align-items: center;
-  background-color: $box-bg-color;
+  background-color: blue;
   border: 1px solid $box-border-color;
   color: $box-border-color;
   display: flex;
   font-family: $font-family;
   height: 80px;
   justify-content: center;
+}
+
+#lets-play {
+    background-color:blue;
+    color: $box-border-color;
 }
