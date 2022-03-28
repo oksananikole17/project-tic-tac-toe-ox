@@ -13,8 +13,7 @@ const onSignUpFailure = function () {
 }
 
 const onSignInSuccess = function (response) {
-  $('#lets-play').html('Lets Play')
-
+  $('#new-game').show()
   $('form').trigger('reset')
 
   console.log(response)

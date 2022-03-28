@@ -2,26 +2,48 @@
 
 const store = require('../store.js')
 
-const createGame = function () {
+const createGame = function (data) {
   return $.ajax({
     method: 'POST',
     url: 'https://tic-tac-toe-api-development.herokuapp.com/games',
     headers: {
       Authorization: 'Bearer ' + store.user.token
-    }
+    },
+    data: {}
   })
 }
-const updateGame = function (data) {
+// const indexGame = function () {
+//   return $.ajax({
+//     method: 'GET',
+//     url: 'https://tic-tac-toe-api-development.herokuapp.com/games',
+//     headers: {
+//       Authorization: 'Bearer ' + store.user.token
+//     }
+
+//   })
+// }
+const updateGame = function (index, value) {
+  console.log(index)
+  console.log(value)
   return $.ajax({
     method: 'PATCH',
-    url: 'https://tic-tac-toe-api-development.herokuapp.com/games/ + store.game.id',
+    url: 'https://tic-tac-toe-api-development.herokuapp.com/games/' + store.game._id,
     headers: {
       Authorization: 'Bearer ' + store.user.token
     },
-    data
+    data: {
+      game: {
+        cell: {
+          index: index,
+          value: value
+        },
+        over: false
+      }
+    }
   })
 }
 module.exports = {
   createGame,
+  // indexGame,
   updateGame
 }
