@@ -32,8 +32,19 @@ const changePassword = function (data) {
   })
 }
 
+const signOut = function () {
+  return $.ajax({
+    method: 'DELETE',
+    url: 'https://tic-tac-toe-api-development.herokuapp.com/sign-out',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
-  changePassword
+  changePassword,
+  signOut
 }

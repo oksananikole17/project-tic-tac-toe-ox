@@ -22,9 +22,8 @@ const createGame = function (data) {
 
 //   })
 // }
-const updateGame = function (index, value) {
-  console.log(index)
-  console.log(value)
+const updateGame = function (index, value, status) {
+  console.log(status)
   return $.ajax({
     method: 'PATCH',
     url: 'https://tic-tac-toe-api-development.herokuapp.com/games/' + store.game._id,
@@ -37,7 +36,7 @@ const updateGame = function (index, value) {
           index: index,
           value: value
         },
-        over: false
+        over: status
       }
     }
   })
