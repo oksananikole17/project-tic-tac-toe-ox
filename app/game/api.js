@@ -12,16 +12,16 @@ const createGame = function (data) {
     data: {}
   })
 }
-// const indexGame = function () {
-//   return $.ajax({
-//     method: 'GET',
-//     url: 'https://tic-tac-toe-api-development.herokuapp.com/games',
-//     headers: {
-//       Authorization: 'Bearer ' + store.user.token
-//     }
+const indexGame = function () {
+  return $.ajax({
+    method: 'GET',
+    url: 'https://tic-tac-toe-api-development.herokuapp.com/games',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
 
-//   })
-// }
+  })
+}
 const updateGame = function (index, value, status) {
   console.log(status)
   return $.ajax({
@@ -43,6 +43,6 @@ const updateGame = function (index, value, status) {
 }
 module.exports = {
   createGame,
-  // indexGame,
+  indexGame,
   updateGame
 }

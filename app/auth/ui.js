@@ -15,6 +15,7 @@ const onSignUpFailure = function () {
 const onSignInSuccess = function (response) {
   $('#new-game').show()
   $('form').trigger('reset')
+  $('#index-game').show()
 
   console.log(response)
   store.user = response.user
@@ -38,11 +39,16 @@ const onChangePasswordFailure = function () {
   $('#sign-display').html('<p>Fail</p>')
 }
 
+const onSignOutSuccess = function () {
+  console.log('byyeeeee')
+  location.reload()
+}
 export default {
   onSignUpFailure,
   onSignUpSuccess,
   onSignInSuccess,
   onSignInFailure,
   onChangePasswordFailure,
-  onChangePasswordSuccess
+  onChangePasswordSuccess,
+  onSignOutSuccess
 }

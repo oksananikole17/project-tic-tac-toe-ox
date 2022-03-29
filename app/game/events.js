@@ -34,7 +34,7 @@ const onIndexGame = function (event) {
   // api call
   gameApi
     .indexGame()
-    .then((response) => gameUi.onIndexGameSuccess(response))
+    .then(() => gameUi.onIndexGameSuccess())
 }
 const switchPlayer = function () {
   if (store.currentPlayer === 'X') {
@@ -63,8 +63,10 @@ const detectWin = function () {
 		gameState[1] === gameState[2]
   ) {
     console.log('win')
+    $('#done').show()
     $('#done').html('WINNER PLAYER X! Game Over')
     store.over = true
+    store.result = 'X won!'
     $('#reset-game').show()
   } else if (
     gameState[3] === 'X' &&
@@ -73,7 +75,9 @@ const detectWin = function () {
   ) {
     console.log('Win')
     store.over = true
+    store.result = 'X won!'
     $('#reset-game').show()
+    $('#done').show()
     $('#done').html('WINNER PLAYER X! Game Over')
   } else if (
     gameState[6] === 'X' &&
@@ -82,6 +86,8 @@ const detectWin = function () {
   ) {
     console.log('win')
     store.over = true
+    store.result = 'X won!'
+    $('#done').show()
     $('#done').html('WINNER PLAYER X! Game Over')
     $('#reset-game').show()
   } else if (
@@ -91,6 +97,8 @@ const detectWin = function () {
   ) {
     console.log('win')
     store.over = true
+    store.result = 'X won!'
+    $('#done').show()
     $('#done').html('WINNER PLAYER X! Game Over')
     $('#reset-game').show()
   } else if (
@@ -100,6 +108,8 @@ const detectWin = function () {
   ) {
     console.log('win')
     store.over = true
+    store.result = 'X won!'
+    $('#done').show()
     $('#done').html('WINNER PLAYER X! Game Over')
     $('#reset-game').show()
   } else if (
@@ -109,6 +119,8 @@ const detectWin = function () {
   ) {
     console.log('win')
     store.over = true
+    store.result = 'X won!'
+    $('#done').show()
     $('#done').html('WINNER PLAYER X! Game Over')
     $('#reset-game').show()
   } else if (
@@ -118,6 +130,8 @@ const detectWin = function () {
   ) {
     console.log('win')
     store.over = true
+    store.result = 'X won!'
+    $('#done').show()
     $('#done').html('WINNER PLAYER X! Game Over')
     $('#reset-game').show()
   } else if (
@@ -127,6 +141,8 @@ const detectWin = function () {
   ) {
     console.log('win')
     store.over = true
+    store.result = 'X won!'
+    $('#done').show()
     $('#done').html('WINNER PLAYER X! Game Over')
     $('#reset-game').show()
   } else if (
@@ -136,7 +152,9 @@ const detectWin = function () {
   ) {
     console.log('win')
     $('#done').html('WINNER PLAYER X! Game Over')
+    $('#done').show()
     store.over = true
+    store.result = 'X won!'
     $('#reset-game').show()
   } else if (
     gameState[3] === 'X' &&
@@ -145,7 +163,9 @@ const detectWin = function () {
   ) {
     console.log('Win')
     store.over = true
+    store.result = 'X won!'
     $('#reset-game').show()
+    $('#done').show()
     $('#done').html('WINNER PLAYER X! Game Over')
   } else if (
     gameState[6] === 'X' &&
@@ -154,6 +174,8 @@ const detectWin = function () {
   ) {
     console.log('win')
     store.over = true
+    store.result = 'X won!'
+    $('#done').show()
     $('#done').html('WINNER PLAYER X! Game Over')
     $('#reset-game').show()
   } else if (
@@ -163,6 +185,8 @@ const detectWin = function () {
   ) {
     console.log('win')
     store.over = true
+    store.result = 'X won!'
+    $('#done').show()
     $('#done').html('WINNER PLAYER X! Game Over')
     $('#reset-game').show()
   } else if (
@@ -172,6 +196,8 @@ const detectWin = function () {
   ) {
     console.log('win')
     store.over = true
+    store.result = 'X won!'
+    $('#done').show()
     $('#done').html('WINNER PLAYER X! Game Over')
     $('#reset-game').show()
   } else if (
@@ -181,6 +207,8 @@ const detectWin = function () {
   ) {
     console.log('win')
     store.over = true
+    store.result = 'X won!'
+    $('#done').show()
     $('#done').html('WINNER PLAYER X! Game Over')
     $('#reset-game').show()
   } else if (
@@ -190,6 +218,8 @@ const detectWin = function () {
   ) {
     console.log('win')
     store.over = true
+    store.result = 'X won!'
+    $('#done').show()
     $('#done').html('WINNER PLAYER X! Game Over')
     $('#reset-game').show()
   } else if (
@@ -199,6 +229,8 @@ const detectWin = function () {
   ) {
     console.log('win')
     store.over = true
+    store.result = 'X won!'
+    $('#done').show()
     $('#done').html('WINNER PLAYER X! Game Over')
     $('#reset-game').show()
   } else if (
@@ -207,8 +239,10 @@ const detectWin = function () {
 		gameState[1] === gameState[2]
   ) {
     console.log('win')
+    $('#done').show()
     $('#done').html('WINNER PLAYER O! Game Over')
     store.over = true
+    store.result = 'O won!'
     $('#reset-game').show()
   } else if (
     gameState[3] === 'O' &&
@@ -217,7 +251,9 @@ const detectWin = function () {
   ) {
     console.log('Win')
     store.over = true
+    store.result = 'O won!'
     $('#reset-game').show()
+    $('#done').show()
     $('#done').html('WINNER PLAYER O! Game Over')
   } else if (
     gameState[6] === 'O' &&
@@ -226,6 +262,8 @@ const detectWin = function () {
   ) {
     console.log('win')
     store.over = true
+    store.result = 'O won!'
+    $('#done').show()
     $('#done').html('WINNER PLAYER O! Game Over')
     $('#reset-game').show()
   } else if (
@@ -235,6 +273,8 @@ const detectWin = function () {
   ) {
     console.log('win')
     store.over = true
+    store.result = 'O won!'
+    $('#done').show()
     $('#done').html('WINNER PLAYER O! Game Over')
     $('#reset-game').show()
   } else if (
@@ -244,6 +284,8 @@ const detectWin = function () {
   ) {
     console.log('win')
     store.over = true
+    store.result = 'O won!'
+    $('#done').show()
     $('#done').html('WINNER PLAYER O! Game Over')
     $('#reset-game').show()
   } else if (
@@ -253,6 +295,8 @@ const detectWin = function () {
   ) {
     console.log('win')
     store.over = true
+    store.result = 'O won!'
+    $('#done').show()
     $('#done').html('WINNER PLAYER O! Game Over')
     $('#reset-game').show()
   } else if (
@@ -262,6 +306,8 @@ const detectWin = function () {
   ) {
     console.log('win')
     store.over = true
+    store.result = 'O won!'
+    $('#done').show()
     $('#done').html('WINNER PLAYER O! Game Over')
     $('#reset-game').show()
   } else if (
@@ -271,6 +317,8 @@ const detectWin = function () {
   ) {
     console.log('win')
     store.over = true
+    store.result = 'O won!'
+    $('#done').show()
     $('#done').html('WINNER PLAYER O! Game Over')
     $('#reset-game').show()
   } else if (
@@ -280,7 +328,9 @@ const detectWin = function () {
   ) {
     console.log('win')
     $('#done').html('WINNER PLAYER O! Game Over')
+    $('#done').show()
     store.over = true
+    store.result = 'O won!'
     $('#reset-game').show()
   } else if (
     gameState[3] === 'O' &&
@@ -289,7 +339,9 @@ const detectWin = function () {
   ) {
     console.log('Win')
     store.over = true
+    store.result = 'O won!'
     $('#reset-game').show()
+    $('#done').show()
     $('#done').html('WINNER PLAYER O! Game Over')
   } else if (
     gameState[6] === 'O' &&
@@ -298,7 +350,9 @@ const detectWin = function () {
   ) {
     console.log('win')
     store.over = true
+    store.result = 'O won!'
     $('#done').html('WINNER PLAYER O! Game Over')
+    $('#done').show()
     $('#reset-game').show()
   } else if (
     gameState[0] === 'O' &&
@@ -307,7 +361,9 @@ const detectWin = function () {
   ) {
     console.log('win')
     store.over = true
+    store.result = 'O won!'
     $('#done').html('WINNER PLAYER O! Game Over')
+    $('#done').show()
     $('#reset-game').show()
   } else if (
     gameState[1] === 'O' &&
@@ -316,7 +372,9 @@ const detectWin = function () {
   ) {
     console.log('win')
     store.over = true
+    store.result = 'O won!'
     $('#done').html('WINNER PLAYER O! Game Over')
+    $('#done').show()
     $('#reset-game').show()
   } else if (
     gameState[2] === 'O' &&
@@ -325,7 +383,9 @@ const detectWin = function () {
   ) {
     console.log('win')
     store.over = true
+    store.result = 'O won!'
     $('#done').html('WINNER PLAYER O! Game Over')
+    $('#done').show()
     $('#reset-game').show()
   } else if (
     gameState[0] === 'O' &&
@@ -334,7 +394,9 @@ const detectWin = function () {
   ) {
     console.log('win')
     store.over = true
+    store.result = 'O won!'
     $('#done').html('WINNER PLAYER 0! Game Over')
+    $('#done').show()
     $('#reset-game').show()
   } else if (
     gameState[2] === 'O' &&
@@ -343,7 +405,9 @@ const detectWin = function () {
   ) {
     console.log('win')
     store.over = true
+    store.result = 'O won!'
     $('#done').html('WINNER PLAYER O! Game Over')
+    $('#done').show()
     $('#reset-game').show()
   }
 }
@@ -380,7 +444,7 @@ const onUpdateGame = function (event) {
 
   gameApi
     .updateGame(cellIndex, cellValue, gameStatus)
-    .then(() => gameUi.onUpdateGameSuccess())
+    .then((response) => gameUi.onUpdateGameSuccess(response))
 }
 
 const resetGame = function () {
@@ -388,19 +452,12 @@ const resetGame = function () {
     $('.box').html('')
     $('#done').hide()
     $('#switch-player').hide()
+
+    gameState.splice($.inArray('X', gameState), 9)
+    gameState.splice($.inArray('O', gameState), 9)
+    console.log(gameState)
   }
 }
-
-// const winningCombinations = [
-//   [0, 1, 2],
-//   [3, 4, 5],
-//   [6, 7, 8],
-//   [0, 3, 6],
-//   [1, 4, 7],
-//   [2, 5, 8],
-//   [0, 4, 8],
-//   [2, 4, 6]
-// ]
 
 module.exports = {
   onCreateGame,
