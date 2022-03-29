@@ -20,7 +20,7 @@ $(() => {
   // $('#which-game').on('click', gameEvents.onIndexGame)
   $('#actual-game').on('click', gameEvents.onUpdateGame)
   $('.box').on('click', gameEvents.emptyString)
-  $('.box').on('click', gameEvents.switchPlayer)
+  // $('.box').on('click', gameEvents.switchPlayer)
   $('#reset-game').on('click', gameEvents.resetGame)
   $('#reset-game').on('click', gameEvents.onCreateGame)
   $('#index-game').on('click', gameEvents.onIndexGame)

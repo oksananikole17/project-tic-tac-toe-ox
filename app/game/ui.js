@@ -14,7 +14,7 @@ const onCreateGameSuccess = function (response) {
 }
 
 const onUpdateGameSuccess = function (response) {
-  $('#switch-player').html('Switch Player!')
+  $('#switch-player').html('Player ' + store.currentPlayer + 's Turn')
   store.games = response.game
   if (store.over === true) {
     gamesArray.push(store.games)

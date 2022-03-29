@@ -36,14 +36,8 @@ const onIndexGame = function (event) {
     .indexGame()
     .then(() => gameUi.onIndexGameSuccess())
 }
-const switchPlayer = function () {
-  if (store.currentPlayer === 'X') {
-    store.currentPlayer = 'O'
-  } else if (store.currentPlayer === 'O') {
-    store.currentPlayer = 'X'
-  }
-}
-const gameState = ['', '', '', '', '', '', '', '', '']
+
+const gameState = []
 
 // const winningCombinations = [
 //   [0, 1, 2],
@@ -409,6 +403,13 @@ const detectWin = function () {
     $('#done').html('WINNER PLAYER O! Game Over')
     $('#done').show()
     $('#reset-game').show()
+  } else if (gameState.length >= 9) {
+    console.log('tied')
+    store.over = true
+    store.result = 'Tied!'
+    $('#done').html('TIE GAME! Game Over')
+    $('#done').show()
+    $('#reset-game').show()
   }
 }
 
@@ -416,16 +417,21 @@ const emptyString = function (event) {
   event.preventDefault()
   // const currentPlayer= 'X'
 
-  const cellIndex = (this.getAttribute('data-cell-index'))
+  const cellIndex = this.getAttribute('data-cell-index')
 
   if ($(this).is(':empty')) {
     $(this).html(store.currentPlayer)
     gameState[cellIndex] = store.currentPlayer
+    if (store.currentPlayer === 'X') {
+      store.currentPlayer = 'O'
+    } else if (store.currentPlayer === 'O') {
+      store.currentPlayer = 'X'
+    }
   } else {
     console.log('You cant go here')
   }
-  console.log(cellIndex)
-  console.log(gameState)
+  // console.log(cellIndex)
+  // console.log(gameState)
 
   detectWin()
 }
@@ -464,7 +470,6 @@ module.exports = {
   onIndexGame,
   onUpdateGame,
   emptyString,
-  switchPlayer,
   detectWin,
   resetGame
 }
