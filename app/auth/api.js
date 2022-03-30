@@ -5,7 +5,7 @@ const store = require('../store.js')
 const signUp = function (data) {
   return $.ajax({
     method: 'POST',
-    url: 'https://tic-tac-toe-api-development.herokuapp.com/sign-up',
+    url: 'https://tic-tac-toe-api-production.herokuapp.com/sign-up',
     data
     // same as data: data
   })
@@ -14,7 +14,7 @@ const signUp = function (data) {
 const signIn = function (data) {
   return $.ajax({
     method: 'POST',
-    url: 'https://tic-tac-toe-api-development.herokuapp.com/sign-in',
+    url: 'https://tic-tac-toe-api-production.herokuapp.com/sign-in',
     data
     // same as data: data
   })
@@ -23,7 +23,7 @@ const signIn = function (data) {
 const changePassword = function (data) {
   return $.ajax({
     method: 'PATCH',
-    url: 'https://tic-tac-toe-api-development.herokuapp.com/change-password',
+    url: 'https://tic-tac-toe-api-production.herokuapp.com/change-password',
     headers: {
       Authorization: 'Bearer ' + store.user.token
     },
@@ -35,7 +35,7 @@ const changePassword = function (data) {
 const signOut = function () {
   return $.ajax({
     method: 'DELETE',
-    url: 'https://tic-tac-toe-api-development.herokuapp.com/sign-out',
+    url: 'https://tic-tac-toe-api-production.herokuapp.com/sign-out',
     headers: {
       Authorization: 'Bearer ' + store.user.token
     }
