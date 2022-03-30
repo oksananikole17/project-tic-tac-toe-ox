@@ -15,7 +15,7 @@ const onSignUpFailure = function () {
 const onSignInSuccess = function (response) {
   $('#new-game').show()
   $('form').trigger('reset')
-
+  $('#sign-out').show()
   console.log(response)
   store.user = response.user
 
