@@ -4,19 +4,10 @@
 const gameApi = require('./api.js')
 const gameUi = require('./ui.js').default
 const store = require('../store.js')
-// const showGame = function () {
-//   console.log('work please')
-// }
-
-// if (authUi.onSignInSuccess()) {
-//   (function () {
-//     console.log('why')
-//   })()
-// }
 
 const onCreateGame = function (event) {
   store.over = false
-  store.cells = ['', '', '', '', '', '', '', '', '']
+  store.cells = []
   store.currentPlayer = 'X'
   event.preventDefault()
   console.log('help')
@@ -37,18 +28,25 @@ const onIndexGame = function (event) {
     .then(() => gameUi.onIndexGameSuccess())
 }
 
-const gameState = []
+const onShowGame = function (event) {
+  event.preventDefault()
+  console.log(event.target)
 
-// const winningCombinations = [
-//   [0, 1, 2],
-//   [3, 4, 5],
-//   [6, 7, 8],
-//   [0, 3, 6],
-//   [1, 4, 7],
-//   [2, 5, 8],
-//   [0, 4, 8],
-//   [2, 4, 6]
-// ]
+  const input = $(event.target).serializeArray()
+  console.log(input)
+  const inputArray = input
+  console.log(inputArray)
+  const val = inputArray[0].value
+  store.value = val
+  console.log(store.value)
+
+  // api call
+  gameApi
+    .showGame()
+    .then(() => gameUi.onShowGameSuccess())
+}
+
+const gameState = []
 
 const detectWin = function () {
   if (
@@ -403,7 +401,18 @@ const detectWin = function () {
     $('#done').html('WINNER PLAYER O! Game Over')
     $('#done').show()
     $('#reset-game').show()
-  } else if (gameState.length >= 9) {
+  } else if (
+    gameState.length >= 9 &&
+		(gameState[0] === 'X' || gameState[0] === 'O') &&
+		(gameState[1] === 'X' || gameState[1] === 'O') &&
+		(gameState[2] === 'X' || gameState[2] === 'O') &&
+		(gameState[3] === 'X' || gameState[3] === 'O') &&
+		(gameState[4] === 'X' || gameState[4] === 'O') &&
+		(gameState[5] === 'X' || gameState[5] === 'O') &&
+		(gameState[6] === 'X' || gameState[6] === 'O') &&
+		(gameState[7] === 'X' || gameState[7] === 'O') &&
+		(gameState[8] === 'X' || gameState[8] === 'O')
+  ) {
     console.log('tied')
     store.over = true
     store.result = 'Tied!'
@@ -471,5 +480,6 @@ module.exports = {
   onUpdateGame,
   emptyString,
   detectWin,
-  resetGame
+  resetGame,
+  onShowGame
 }

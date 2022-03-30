@@ -10,6 +10,8 @@ const onCreateGameSuccess = function (response) {
   store.game = response.game
 
   $('#actual-game').show()
+  $('#index-game').show()
+  $('#show-gamesIn').show()
   $('.index-games').hide()
 }
 
@@ -56,8 +58,26 @@ const onIndexGameSuccess = function () {
   $('form').trigger('reset')
 }
 
+const onShowGameSuccess = function () {
+  const index = store.value - 1
+  const gameWinner = resultsArray[index]
+  const gameCells = gamesArray[index].cells
+
+  const gamesHtml = `
+                    <div>
+                    </div> <div> Game Number: ${store.value}</div>
+                        <div> Plays: ${gameCells}</div>
+                        <div> Player ${gameWinner} </div>
+                        </div>`
+
+  $('#find-game').html(gamesHtml)
+
+  $('form').trigger('reset')
+}
+
 export default {
   onCreateGameSuccess,
   onIndexGameSuccess,
-  onUpdateGameSuccess
+  onUpdateGameSuccess,
+  onShowGameSuccess
 }

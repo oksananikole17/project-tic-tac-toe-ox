@@ -12,6 +12,7 @@ $(() => {
   $('#reset-game').hide()
   $('#index-game').hide()
   $('.index-games').hide()
+  $('#show-gamesIn').hide()
   $('#sign-up-form').on('submit', authEvents.onSignUp)
   $('#sign-in-form').on('submit', authEvents.onSignIn)
   $('#sign-out').on('click', authEvents.onSignOut)
@@ -24,4 +25,5 @@ $(() => {
   $('#reset-game').on('click', gameEvents.resetGame)
   $('#reset-game').on('click', gameEvents.onCreateGame)
   $('#index-game').on('click', gameEvents.onIndexGame)
+  $('#show-game-form').on('submit', gameEvents.onShowGame)
 })

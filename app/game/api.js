@@ -22,6 +22,15 @@ const indexGame = function () {
 
   })
 }
+const showGame = function () {
+  return $.ajax({
+    method: 'GET',
+    url: 'https://tic-tac-toe-api-development.herokuapp.com/games/' + store.game._id,
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
 const updateGame = function (index, value, status) {
   console.log(status)
   return $.ajax({
@@ -44,5 +53,6 @@ const updateGame = function (index, value, status) {
 module.exports = {
   createGame,
   indexGame,
-  updateGame
+  updateGame,
+  showGame
 }
