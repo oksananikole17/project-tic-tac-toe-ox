@@ -463,15 +463,15 @@ const onUpdateGame = function (event) {
 }
 
 const resetGame = function () {
-  if (store.over === true) {
-    $('.box').html('')
-    $('#done').hide()
-    $('#switch-player').hide()
+  // if (store.over === true) {
+  $('.box').html('')
+  $('#done').hide()
+  $('#switch-player').hide()
 
-    gameState.splice($.inArray('X', gameState), 9)
-    gameState.splice($.inArray('O', gameState), 9)
-    console.log(gameState)
-  }
+  gameState.splice($.inArray('X', gameState), 9)
+  gameState.splice($.inArray('O', gameState), 9)
+  console.log(gameState)
+  // }
 }
 
 module.exports = {

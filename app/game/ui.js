@@ -54,6 +54,7 @@ const onIndexGameSuccess = function () {
   })
 
   $('#show-gamesIn').html(gamesHtml)
+  $('#show-game-form').show()
 
   $('form').trigger('reset')
 }
