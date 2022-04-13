@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Welcome to Tic Tac Toe!</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <h1>Welcome to Tic Tac Toe!</h1>
+      <h3>Don't have an Account? Sign Up</h3>
+      <form id="sign-up-form">
+        <input name="credentials[email]" type="email" placeholder="Email">
+        <input name="credentials[password]" type="password" placeholder="Password">
+        <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password">
+        <button type="submit">Sign Up</button>
+        </form>
+        <sec id="auth-display"></sec>
+        <h3>OR</h3>
+        <h3>Have an Account? Sign In</h3>
+        <form id="sign-in-form">
+          <input name="credentials[email]" type="email" placeholder="Email">
+          <input name="credentials[password]" type="password" placeholder="Password">
+          <button type="submit">Sign In</button>
+        </form>
+        <button id="sign-out">Sign Out</button>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Forgot Password?
+        </button>
+        
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Change Your Password</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form id="password-form">
+                  <input name="passwords[old]" type="password" placeholder="Old Password">
+                  <input name="passwords[new]" type="password" placeholder="New Password">
+      
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Change Password</button>
+              </div>
+              </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <sec id="sign-display"></sec>
+        <button id="new-game">New Game</button>
+        <button id="index-game">See Games</button>
+        <div id="actual-game">
+            <h2>Lets Play!!</h2>
+            <h6>Player 1 Starts on X </h6>
+            <div class="container">
+              <div class="row">
+                <div class="col-md-4 col-lg-4 box alt-color" data-cell-index="0" id = "0"></div>
+                <div class="col-md-4 col-lg-4 box alt-color" data-cell-index="1" id="1" ></div>
+                <div class="col-md-4 col-lg-4 box alt-color" data-cell-index="2" id="'2"></div>
+                <div class="col-md-4 col-lg-4 box alt-color" data-cell-index="3" id="3"></div>
+                <div class="col-md-4 col-lg-4 box alt-color" data-cell-index="4" id="'4"></div>
+                <div class="col-md-4 col-lg-4 box alt-color" data-cell-index="5" id="5"></div>
+                <div class="col-md-4 col-lg-4 box alt-color" data-cell-index="6" id="6"></div>
+                <div class="col-md-4 col-lg-4 box alt-color" data-cell-index="7" id="7"></div>
+                <div class="col-md-4 col-lg-4 box alt-color" data-cell-index="8" id="8"></div>
+              </div>
+            </div>
+          </div>
+          <div id="switch-player"></div>
+          <div id="done"></div>
+          <button id= "reset-game">Play Again</button>
+          <h1 class="index-games">All Games Completed</h1>
+          <div class="index-games" id = "show-gamesIn"></div>
+          <form id="show-game-form">
+          <input name="games[index]" type="number" placeholder="Game Number">
+          <button type="submit">Find Game</button>
+          </form>
+          <div id ="find-game"></div>
+    </body>
+</html>

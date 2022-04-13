@@ -1,0 +1,102 @@
+@import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+$font-family:'Playfair Display', serif;
+$body-bg-color: grey;
+$box-bg-color: lightgrey;
+$box-border-color: white;
+$alt-bg-color: cyan;
+
+input {
+    display:block;
+    margin: 5px;
+}
+h3 {
+    margin: 30px;
+}
+#auth-display {
+    margin:10px;
+}
+#sign-display {
+    margin:10px;
+}
+#password-form {
+    float:right;
+}
+
+.btn {
+    margin:20px;
+}
+h1 {
+    font-weight: 300;
+    text-align: center;
+}
+h2{
+    text-align:center;
+    margin:40px;
+}
+.box {
+  align-items: center;
+  background-color: blue;
+  border: 1px solid $box-border-color;
+  color: $box-border-color;
+  display: flex;
+  font-family: $font-family;
+  height: 80px;
+  justify-content: center;
+}
+
+#lets-play {
+    background-color:blue;
+    color: $box-border-color;
+    margin: 30px;
+}
+
+#done {
+    margin: 90px;
+    color: blue;
+    text-align: center;
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+#switch-player {
+    text-align: right;
+    font-weight:bold;
+    margin: 50px;
+    font-size:x-large;
+}
+
+#reset-game {
+    margin: 40px;
+    color: blue;
+    align-self: center;
+    font-weight:bolder;
+}
+
+#sign-out {
+    display: block;
+    margin: 20px 0px;
+}
+
+li {
+    border: 2px dotted black;
+    color: black;
+}
+
+#index-game {
+    background-color: black;
+    color:azure;
+    margin: 0 auto;
+    display: block;
+    
+}
+#new-game {
+    display:block;
+    margin: 0 auto;
+
+}
+h6 {
+    text-align: center;
+    text-decoration: dashed;
+}
