@@ -47,6 +47,8 @@ const onShowGame = function (event) {
 }
 
 const gameState = []
+// eslint-disable-next-line no-unused-vars
+const gameOver = ''
 
 const detectWin = function () {
   if (
@@ -54,7 +56,6 @@ const detectWin = function () {
 		gameState[0] === gameState[1] &&
 		gameState[1] === gameState[2]
   ) {
-    console.log('win')
     $('#done').show()
     $('#done').html('WINNER PLAYER X! Game Over')
     store.over = true
@@ -425,19 +426,23 @@ const detectWin = function () {
 const emptyString = function (event) {
   event.preventDefault()
   // const currentPlayer= 'X'
-
+  console.log(store.over)
   const cellIndex = this.getAttribute('data-cell-index')
 
-  if ($(this).is(':empty')) {
+  if ($(this).is(':empty') && store.over === false) {
     $(this).html(store.currentPlayer)
     gameState[cellIndex] = store.currentPlayer
     if (store.currentPlayer === 'X') {
       store.currentPlayer = 'O'
     } else if (store.currentPlayer === 'O') {
       store.currentPlayer = 'X'
+      // } else if (store {
+      //   $(this).html('')
+      //   return false
     }
   } else {
     console.log('You cant go here')
+    return false
   }
   // console.log(cellIndex)
   // console.log(gameState)
@@ -460,6 +465,7 @@ const onUpdateGame = function (event) {
   gameApi
     .updateGame(cellIndex, cellValue, gameStatus)
     .then((response) => gameUi.onUpdateGameSuccess(response))
+
 }
 
 const resetGame = function () {
